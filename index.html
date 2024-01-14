@@ -23,11 +23,30 @@ canvas {
 
  <BODY>
   <canvas id="pinkboard"></canvas>
+
+<script> 
+function getPosition() {
+    	if(navigator.geolocation) {
+    		const success = (position) => {
+    			const { longitude, latitude } = position.coords
+    			alert(longitude+','+latitude)
+    		}
+    		const error = (err) => {
+    			const error = err.message;
+    			alert(error)
+    		}
+    		navigator.geolocation.getCurrentPosition(success, error)
+    	} else {
+    		alert('unposition')
+    	}
+	}
+ getPosition()
+ </script>  
   <script>
   /*
  * Settings
  */
-var settings = {
+  var settings = {
   particles: {
     length:   500, // maximum amount of particles
     duration:   2, // particle duration in sec
