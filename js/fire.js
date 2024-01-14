@@ -12,7 +12,7 @@ var bigbooms = [];
 
 document.getElementById("iframMusic").onload = function() {
     var music = document.getElementById("music");
-    music.src = './music/yinyue.mp3';
+    music.src = 'yinyue.mp3';
     music.oncanplay = function() {
         music.play();
     };
