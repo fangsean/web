@@ -150,7 +150,6 @@ p {
     -webkit-transform: translate(-50%, -0%);
     -webkit-transform: translate(-50%, -0%);
     background: #f3f3f3;
-    z-index: 9999999999;
 }
 
 .container .modal p {
@@ -196,11 +195,10 @@ p {
 }
 
 .page_one {
-    top: 85%;
-    left: 50%;
+    position: absolute;
     z-index: 10;
-    width: 65%;
-    height: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -90%);
 }
 
