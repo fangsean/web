@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> hello </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <style>
+.box {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  position: absolute;
+  margin-left: 42%;
+  margin-top: 22%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateX(13deg);
+  -webkit-animation: move 5s linear infinite;
+}
+.minbox li:nth-child(1) {
+  background: url(../img/01.png) no-repeat 0 0;
+  -webkit-transform: translateZ(50px);
+}
+.minbox li:nth-child(2) {
+  background: url(../img/02.png) no-repeat 0 0;
+  -webkit-transform: rotateX(180deg) translateZ(50px);
+}
+.minbox li:nth-child(3) {
+  background: url(../img/03.png) no-repeat 0 0;
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+}
+.minbox li:nth-child(4) {
+  background: url(../img/04.png) no-repeat 0 0;
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+.minbox li:nth-child(5) {
+  background: url(../img/05.png) no-repeat 0 0;
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+.minbox li:nth-child(6) {
+  background: url(../img/06.png) no-repeat 0 0;
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+}
+.maxbox li:nth-child(1) {
+  background: url(../img/1.png) no-repeat 0 0;
+  -webkit-transform: translateZ(50px);
+}
+.maxbox li:nth-child(2) {
+  background: url(../img/2.png) no-repeat 0 0;
+  -webkit-transform: translateZ(50px);
+}
+.maxbox li:nth-child(3) {
+  background: url(../img/3.png) no-repeat 0 0;
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+}
+.maxbox li:nth-child(4) {
+  background: url(../img/4.png) no-repeat 0 0;
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+.maxbox li:nth-child(5) {
+  background: url(../img/5.png) no-repeat 0 0;
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+.maxbox li:nth-child(6) {
+  background: url(../img/6.png) no-repeat 0 0;
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+}
+.maxbox {
+  width: 800px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  -webkit-transform-style: preserve-3d;
+}
+.maxbox li {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.2;
+  -webkit-transition: all 1s ease;
+}
+.maxbox li:nth-child(1) {
+  -webkit-transform: translateZ(100px);
+}
+.maxbox li:nth-child(2) {
+  -webkit-transform: rotateX(180deg) translateZ(100px);
+}
+.maxbox li:nth-child(3) {
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+}
+.maxbox li:nth-child(4) {
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+}
+.maxbox li:nth-child(5) {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+}
+.maxbox li:nth-child(6) {
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+}
+  </style>
+ </HEAD>
+
+ <BODY>
+<!-- 白雪花飘落 -->
+    <div class="drop"></div>
+    <!-- 打字 -->
+    <div class="typing">
+      <!-- 字幕 -->
+      <h2 class="header-sub-title" id="word"></h2>
+      <h2 class="header-sub-title blink">|</h2>
+    </div>
+    <!-- 星空 -->
+    <div class="landscape"></div>
+    <div class="filter"></div>
+    <canvas id="canvas"></canvas>
+    <!-- 自动播放 -->
+    <!-- 相册 -->
+    <div id="jsi-snow-container" class="container"></div>
+    <div class="box">
+      <ul class="minbox">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <ol class="maxbox">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+ 
+ </BODY>
+
+
+  <script>
+      var d = "<div class='maple'>❄<div>";
+      setInterval(function () {
+        var f = $(document).width();
+        var e = Math.random() * f - 300; // 雪花的定位left值
+        var o = 0.2 + Math.random(); // 雪花的透明度
+        var fon = 25 + Math.random() * 10; // 雪花大小
+        var l = e - 100 + 200 * Math.random(); // 雪花的横向位移
+        var k = 8000 + 5000 * Math.random();
+        var deg = Math.random() * 360; // 雪花的方向
+        $(d)
+          .clone()
+          .appendTo(".maplebg")
+          .css({
+            left: e + "px",
+            opacity: o,
+            transform: "rotate(" + deg + "deg)",
+            "font-size": fon,
+          })
+          .animate(
+            {
+              top: "550px",
+              left: l + "px",
+              opacity: 0.1,
+            },
+            k,
+            "linear",
+            function () {
+              $(this).remove();
+            }
+          );
+      }, 500);
+    </script>
+</HTML>
+  
