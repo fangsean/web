@@ -21,12 +21,6 @@ var bigbooms = [];
 function initAnimate() {
     drawBg();
     lastTime = new Date();
-
-    var tpl = '<audio autoplay loop id="music">' +
-      '<source src="music/yanhua.mp3" /></audio>' +
-    '<audio src="music/yanhua1.mp3" controls="controls" autoplay="autoplay" loop="loop" id="music" ></audio>' +
-    '<iframe id="iframMusic" allow="autoplay" style="display: none" src="music/yanhua3.mp3"></iframe>';
-    $('body').append(tpl);
     animate()
 }
 var lastTime;
