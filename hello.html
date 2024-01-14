@@ -470,7 +470,7 @@
     let delSpeed = 50;
     /* 开始编写文字 */
     function typingEffect() {
-      let word = words[i].split("");
+      let word = words[i%words.length].split("");
       var loopTyping = function () {
         if (word.length > 0) {
           document.getElementById("word").innerHTML += word.shift();
